@@ -3,20 +3,372 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Seihak's Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="IMG_3022.JPG" />
+  <meta property="og:description" content="Hi, I'm Seihak, a passionate web developer specializing in Node.js and React.js, creating intuitive digital experiences." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Seihak's Portfolio" />
   <link href="src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-        <div class="md:flex">
-          <div class="md:shrink-0">
-            <img class="h-48 w-full object-cover md:h-full md:w-48" src="/img/building.jpg" alt="Modern building architecture">
-          </div>
-          <div class="p-8">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Company retreats</div>
-            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Incredible accommodation for your team</a>
-            <p class="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p>
+<body class ="bg-white">
+  <header class="bg-white  sticky top-0 z-10 py-4 px-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-3xl font-bold text-gray-800">
+        <a href="#hero">&lt;SSH&gt;</a>
+      </div>
+
+      <!-- Burger Icon -->
+      <div id="iconWrapper" class="block md:hidden">
+        <i id="toggleIcon" class="fa-solid fa-bars fa-xl"></i>
+      </div>
+
+      <!-- Navbar for larger screens -->
+      <nav
+        class="hidden md:flex justify-center items-center space-x-8 text-gray-600 font-medium"
+      >
+        <a href="#about" class="hover:text-gray-800">About</a>
+        <a href="#skills" class="hover:text-gray-800">Skills</a>
+        <a href="#projects" class="hover:text-gray-800">Projects</a>
+        <a href="#contact" class="hover:text-gray-800">Contact</a>
+        <button
+          class="px-4 py-2 bg-gray-800 text-gray-50 rounded-lg shadow hover:bg-gray-50 hover:text-gray-800 transition"
+        >
+          Download CV
+        </button>
+      </nav>
+
+      <!-- Sidebar for smaller screens -->
+      <div
+        id="sidebar"
+        class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 md:hidden"
+      >
+        <nav class="p-4 space-y-4 mt-4">
+          <a href="#about" class="block text-gray-700 hover:text-black hover:bg-gray-50 rounded-md p-2">About</a>
+          <a href="#skills" class="block text-gray-700 hover:text-black hover:bg-gray-50 rounded-md p-2">Skills</a>
+          <a href="#projects" class="block text-gray-700 hover:text-black hover:bg-gray-50 rounded-md p-2">Projects</a>
+          <a href="#contact" class="block text-gray-700 hover:text-black hover:bg-gray-50 rounded-md p-2">Contact</a>
+          <a
+            href="#"
+            class="block bg-black text-white text-center py-2 rounded-md shadow hover:bg-gray-50 hover:text-gray-800 transition"
+            >Download CV</a
+          >
+        </nav>
+      </div>
+    </div>
+  </header>
+  <script>
+    // Select the elements
+    const iconWrapper = document.getElementById("iconWrapper");
+    const toggleIcon = document.getElementById("toggleIcon");
+    const sidebar = document.getElementById("sidebar");
+
+    // Toggle sidebar and icon
+    iconWrapper.addEventListener("click", () => {
+      sidebar.classList.toggle("-translate-x-full");
+
+      // Toggle the icon class
+      if (toggleIcon.classList.contains("fa-bars")) {
+        toggleIcon.classList.remove("fa-bars");
+        toggleIcon.classList.add("fa-times");
+      } else {
+        toggleIcon.classList.remove("fa-times");
+        toggleIcon.classList.add("fa-bars");
+      }
+    });
+  </script>
+  <main class="m-6">
+  <!-- Hero Section -->
+      <div class="container mx-auto my-6 px-4 py-12 flex flex-col-reverse justify-between md:flex-row items-center" id="hero">
+        <!-- Text Section -->
+        <div class="w-full text-start md:w-2/3 mt-6 md:mt-0">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+            Hi, I'm Seihak <span class="wave">👋</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mt-4">
+            I'm a passionate web developer specializing in building dynamic and intuitive web applications
+            using <span class="font-bold">Node.js</span> and <span class="font-bold">React.js</span>. Currently pursuing Bachelor of Science in Information Technology and
+            Engineering at the Royal University of Phnom Penh.
+          </p>
+          <p class="text-gray-500 mt-8 flex justify-start items-center">
+            <i class="fa-solid fa-location-dot fa-xl mr-2" style="color: #444444;"></i><span class="mt-2 text-md">Phnom Penh, Cambodia</span> 
+          </p>
+          <p class="text-gray-500 mt-2 flex justify-start items-center">
+            <i class="fa-solid fa-circle fa-sm  ml-0.5 mr-2" style="color: #10B981;"></i><span class=" mt-2 text-md">Available for new projects and internship</span>
+          </p>
+          <div class="flex space-x-4 mt-10">
+            <a href="#" class="text-gray-500 hover:text-gray-800">
+              <i class="fab fa-facebook fa-xl"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-gray-800">
+              <i class="fab fa-instagram fa-xl"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-gray-800">
+              <i class="fab fa-behance fa-xl"></i>
+            </a>
           </div>
         </div>
+
+        <!-- Image Section -->
+        <div class="flex-1 flex justify-center sm:mr-0 mb-6 md:justify-end md:mr-8 ">
+          <img
+            src="IMG_0003.JPG"
+            alt="Seihak"
+            class="rounded-xl shadow-lg w-80 md:w-[315px] md:h-[420px]"
+          />
+        </div>
       </div>
+  </main>
+  <!--About me section-->
+  <section class="bg-gray-50 py-6" id="about" >
+    <div class="flex justify-center items-center w-full ">
+      <div class="flex justify-center items-center m-6">
+        <p class="px-6 py-1 rounded-xl bg-gray-100 text-gray-500">About me</p>
+      </div>
+    </div>
+    <div class="flex flex-col items-center md:flex-row md:items-stretch gap-12 p-6 md:px-12 py-6 rounded-lg">
+    <!-- Image Section -->
+    <div class="w-2/3  md:w-2/5 md:ml-12">
+      <img
+          src="IMG_3022.JPG"
+          alt="About Me Image"
+          class="w-full rounded-lg shadow-md"
+        />
+    </div>
+      <!-- Text Section -->
+    <div class="w-full md:w-1/2 text-gray-800 px-4 ">
+      <h2 class="text-2xl font-bold mb-4">Curious about me? Here you have it:</h2>
+        <p class="mb-4">
+          I'm a passionate, <span class="font-semibold text-gray-900">self-proclaimed designer</span> who specializes in full-stack development (React.js & Node.js). I am very enthusiastic about bringing the technical and visual aspects of digital products to life. User experience, pixel-perfect design, and writing clear, readable, highly performant code matter to me.
+        </p>
+        <p class="mb-4">
+          I began my journey as a web developer in 2015, and since then, I've continued to grow and evolve as a developer, taking on new challenges and learning the latest technologies along the way. Now, in my early thirties, 7 years later, I am still loving my development journey. I'm building cutting-edge web applications using modern technologies such as Next.js, TypeScript, NestJS, TailwindCSS, Supabase, and much more.
+        </p>
+        <p class="mb-4">
+          When I'm not in full-on developer mode, you can find me hovering around on Twitter or on Indie Hacker, witnessing the journey of early startups or enjoying some free time. You can follow me on
+          <a href="https://twitter.com" class="text-blue-500 hover:underline">Twitter</a> where I share tech-related tidbits and in public, or you can follow me on
+          <a href="https://github.com" class="text-blue-500 hover:underline">GitHub</a>.
+        </p>
+        <p class="mb-4">
+          One last thing, I'm available for freelance work, so feel free to reach out and say hello! I promise I don't bite. 😊
+        </p>
+      </div>
+    </div>    
+  </section>
+  <!--Skill section-->
+  <section class="p-8" id="skills">
+    <div class="flex justify-center items-center w-full">
+      <div class="flex flex-col gap-4 justify-center items-center m-6">
+        <p class="px-6 py-1 rounded-xl bg-gray-100 text-gray-500">Skills</p>
+        <p class="text-md text-gray-400">The skill, tools and technologies I am really good at:</p>
+      </div>
+    </div>
+
+    <div class=" mx-auto text-center">
+      <!-- Skills Icons -->
+      <div class="flex flex-wrap justify-center gap-24 md:gap-32 items-center">
+        <!-- Skill: JavaScript -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg"
+            alt="JavaScript"
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-sm font-medium text-gray-700">JavaScript</span>
+        </div>
+
+        <!-- Skill: Figma -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png"
+            alt="Figma"
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-sm font-medium text-gray-700">Figma</span>
+        </div>
+
+        <!-- Skill: Tailwind CSS -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://images.seeklogo.com/logo-png/35/1/tailwind-css-logo-png_seeklogo-354675.png"
+            alt="TailwindCSS"
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-sm font-medium text-gray-700">TailwindCSS</span>
+        </div>
+
+        <!-- Skill: Git -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png"
+            alt="Git"
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-sm font-medium text-gray-700">Git</span>
+        </div>
+
+        <!-- Skill: React -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+            alt="React"
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-sm font-medium text-gray-700">React</span>
+        </div>
+
+        <!-- Skill: Node.js -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://static-00.iconduck.com/assets.00/node-js-icon-1817x2048-g8tzf91e.png"
+            alt="Node.js"
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-sm font-medium text-gray-700">Node.js</span>
+        </div>
+
+        <!-- Skill: PostgreSQL -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png"
+            alt="PostgreSQL"
+            class="w-16 h-16 mb-2"
+          />
+          <span class="text-sm font-medium text-gray-700">PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Projects-->
+  <section class="p-16" id="projects">
+    <div class="flex justify-center items-center w-full">
+      <div class="flex flex-col gap-4 justify-center items-center m-6">
+        <p class="px-6 py-1 rounded-xl bg-gray-100 text-gray-500">Projects</p>
+        <p class="text-md text-gray-400">Some of the noteworthy projects that I have built:</p>
+      </div>
+    </div>
+    <!--Project card 1-->
+    <div class="rounded-2xl shadow-md flex flex-col md:flex-row mt-10">
+      <!--Picture section-->
+      <div class=" w-full md:w-1/2 rounded-t-2xl md:rounded-l-2xl md:rounded-t-none bg-gray-50 p-12">
+          <img 
+          src="https://colorlib.com/wp/wp-content/uploads/sites/2/15_awesome-websites.jpg" 
+          alt="project_image"
+          class="rounded-2xl"
+          >
+      </div>
+      <!--Text section-->
+      <div class="w-full md:w-1/2 p-12">
+        <h1 class="text-black text-2xl">Project name</h1>
+        <p class="text-start mt-4 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+        <!--Technology_used-->
+        <div class="flex flex-wrap justify-start gap-4 max-w-xl mt-4">
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">React</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Next.js</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Tailwind</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Postgre</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Git</p>
+        </div>
+      </div>
+    </div>
+    <!--Project card 2-->
+    <div class="rounded-2xl shadow-md flex flex-col md:flex-row-reverse mt-10">
+      <!--Picture section-->
+      <div class=" w-full md:w-1/2 rounded-t-2xl md:rounded-r-2xl md:rounded-t-none bg-gray-50 p-12">
+          <img 
+          src="https://colorlib.com/wp/wp-content/uploads/sites/2/15_awesome-websites.jpg" 
+          alt="project_image"
+          class="rounded-2xl"
+          >
+      </div>
+      <!--Text section-->
+      <div class="w-full md:w-1/2 p-12">
+        <h1 class="text-black text-2xl">Project name</h1>
+        <p class="text-start mt-4 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+        <!--Technology_used-->
+        <div class="flex flex-wrap justify-start gap-4 max-w-xl mt-4">
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">React</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Next.js</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Tailwind</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Postgre</p>
+          <p class="flex justify-center items-center bg-gray-100 px-6 py-1 rounded-3xl ">Git</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-black text-white px-6 py-10">
+    <div class="max-w-6xl md:max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-10 ">
+      <!-- Contact Info Section -->
+      <div class="p-6 space-y-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Let get to <span class="text-yellow-400">Know</span> each other 👋!!!
+        </h2>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-envelope"></i>
+            SeiHakSE@gmail.com
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i>
+            0123456789
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot"></i>
+            Based in Phnom Penh, Cambodia
+          </li>
+        </ul>
+        <div class="flex space-x-4 mt-6">
+          <a href="#" class="text-yellow-400 hover:text-yellow-500">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="text-yellow-400 hover:text-yellow-500">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-yellow-400 hover:text-yellow-500">
+            <i class="fab fa-behance"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Contact Form Section -->
+      <div class="w-full md:w-1/2">
+        <form class=" text-white  p-6  space-y-4">
+          <div>
+            <input
+              type="text"
+              id="name"
+              class="w-full border rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="Your Name"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              id="email"
+              class="w-full border rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="Your Email"
+            />
+          </div>
+          <div>
+            <textarea
+              id="message"
+              class="w-full border rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="Type your message here"
+              rows="4"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-1/2 bg-yellow-400 text-white font-bold py-4 px-4 rounded-xl hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>  
 </body>
 </html>
